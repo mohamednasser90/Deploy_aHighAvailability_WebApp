@@ -347,7 +347,13 @@ Outputs:
     Description: all public subnet in vpc
     Value: !Join [",",[ !Ref PrivateSubnet1, !Ref PrivateSubnet2 ]]
     Export:
-      Name: !Sub ${MNEnvironment}-PriSubnet           
+      Name: !Sub ${MNEnvironment}-PriSubnet   
+
+  LoadBalancer:
+    Description: Url to access end point
+    Value: !Join [ "", [ 'http://', !GetAtt AppLB.DNSName  ]]
+    Export:
+      Name: !Sub ${MNEnvironment}-webappurl            
 
 
 
