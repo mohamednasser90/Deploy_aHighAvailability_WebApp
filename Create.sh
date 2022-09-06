@@ -1,0 +1,1 @@
+aws cloudformation create-stack --stack-name udastackproj --region us-east-1 --template-body file://project2_HA.yml  --parameters file://project2_HA_parameters.json
